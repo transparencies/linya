@@ -1,6 +1,6 @@
 [package]
 name = "linya"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["Colin Woodbury <colin@fosskers.ca>"]
 edition = "2021"
 description = "Simple concurrent progress bars."
@@ -16,10 +16,9 @@ exclude = ["screenshots/*"]
 github = { repository = "fosskers/linya", branch = "master", workflow = "Tests" }
 
 [dependencies]
-terminal_size = "0.1"
+terminal_size = "0.3"
 
 [dev-dependencies]
 curl = "0.4"
 rand = "0.8"
 rayon = "1.5"
-version-sync = "0.9"

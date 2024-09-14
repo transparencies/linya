@@ -1,5 +1,11 @@
 # `linya` Changelog
 
+## 0.3.1 (2024-09-15)
+
+#### Changed
+
+- Bumped dependencies.
+
 ## 0.3.0 (2022-05-18)
 
 #### Added

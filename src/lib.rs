@@ -94,7 +94,6 @@
 //! [indicatif]: https://lib.rs/crates/indicatif
 
 #![warn(missing_docs)]
-#![doc(html_root_url = "https://docs.rs/linya/0.3.0")]
 
 use std::fmt;
 use std::io::{BufWriter, Stderr, Write};
@@ -205,7 +204,7 @@ impl Progress {
         // running in a terminal, and no rerendering can be done.
         if let Some((term_width, term_height)) = self.size {
             let pos = self.bars.len() - bar.0;
-            let mut b = &mut self.bars[bar.0];
+            let b = &mut self.bars[bar.0];
             let cur_percent = (100 * b.curr as u64) / (b.total as u64);
             // For a newly cancelled bar `diff` is equal to 100.
             let diff = cur_percent - b.prev_percent as u64;
@@ -288,7 +287,7 @@ impl Progress {
     /// ownership so that the bar cannot be manipulated again.
     pub fn cancel(&mut self, bar: Bar) {
         {
-            let mut b = &mut self.bars[bar.0];
+            let b = &mut self.bars[bar.0];
             b.cancelled = true;
             // Force redraw by setting `prev_percent` to 0.
             b.prev_percent = 0;
